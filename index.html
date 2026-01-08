@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h1>EduManage</h1>
+            </div>
+            <p>Student Record Management System</p>
+        </header>
+
+        <main class="main-content">
+            <section class="form-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-user-plus"></i> Add New Student</h2>
+                    </div>
+                    <form id="student-form">
+                        <input type="hidden" id="student-id">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="e.g. John Doe" required>
+                            <span class="error-msg" id="name-error"></span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="e.g. john@example.com" required>
+                                <span class="error-msg" id="email-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact">Contact No</label>
+                                <input type="tel" id="contact" placeholder="e.g. 1234567890" required>
+                                <span class="error-msg" id="contact-error"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                             <div class="form-group">
+                                <label for="class-grade">Class/Grade</label>
+                                <input type="text" id="class-grade" placeholder="e.g. 10th Grade" required>
+                                <span class="error-msg" id="class-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="roll-no">Roll Number</label>
+                                <input type="number" id="roll-no" placeholder="e.g. 101" required>
+                                <span class="error-msg" id="roll-error"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" id="submit-btn" class="btn btn-primary">
+                                <i class="fa-solid fa-plus"></i> Add Student
+                            </button>
+                            <button type="button" id="cancel-btn" class="btn btn-secondary hidden">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="list-section">
+                <div class="card">
+                    <div class="card-header list-header">
+                        <h2><i class="fa-solid fa-users"></i> Student List</h2>
+                        <div class="search-bar">
+                            <i class="fa-solid fa-search"></i>
+                            <input type="text" id="search-input" placeholder="Search students...">
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="student-table">
+                            <thead>
+                                <tr>
+                                    <th>Roll No</th>
+                                    <th>Name</th>
+                                    <th>Class</th>
+                                    <th>Email</th>
+                                    <th>Contact</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="student-list">
+                                <!-- Student rows will be injected here -->
+                                <tr class="empty-state">
+                                    <td colspan="6">
+                                        <div class="empty-icon"><i class="fa-regular fa-folder-open"></i></div>
+                                        <p>No student records found.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 EduManage System</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
